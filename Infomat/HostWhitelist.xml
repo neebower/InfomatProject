@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HostWhiteList>
+  <Host>92.53.101.102</Host>
+  <Host>www.msu.ru</Host>
+  <Host>nbmgu.ru</Host>
+  <Host>www.nbmgu.ru</Host>
+  <Host>neebower.github.io</Host>
+</HostWhiteList>

@@ -1,0 +1,64 @@
+﻿<Window x:Class="InfomatLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InfomatLauncher"
+        mc:Ignorable="d"
+        Title="InfomatSettings" Height="600" Width="525" MinHeight="320" MinWidth="400">
+   <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+       
+
+        <ScrollViewer x:Name="Scroll"
+                      Background="White" 
+                      Grid.Row="0" 
+                      Grid.Column="0" 
+                      Grid.ColumnSpan="7"
+                      Grid.RowSpan="5"
+                      HorizontalScrollBarVisibility="Auto">
+                      <!--comment-->
+        <Grid x:Name="Launch">
+        </Grid>
+        </ScrollViewer>
+       
+
+        <Button x:Name="Configure" 
+                Grid.Row="5"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="10, 10, 10, 10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                MaxHeight="50"
+                MaxWidth="300"
+                Content="Save and exit" Click="Configure_Click"/>
+        <CheckBox Name="OpenApp"
+                  Grid.Row="5"
+                  Grid.Column="4"
+                  Grid.ColumnSpan ="2"
+                  Margin="0, 38, 0, 38"
+               
+            IsChecked="False"
+                  >Launch the Application?</CheckBox>
+    </Grid>
+    
+
+</Window>

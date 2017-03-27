@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Application>
+    <CursorVisibility>True</CursorVisibility>
+  </Application>
+  <MessagesINTOCef>
+    <CallbackObject>requestToCef</CallbackObject>
+  </MessagesINTOCef>
+  <Browser>
+    <Address>http://neebower.github.io</Address>
+    <OpenNewTabs>False</OpenNewTabs>
+    <HideContextMenu>True</HideContextMenu>
+    <EnableApplicationCache>False</EnableApplicationCache>
+  </Browser>
+  <MessagesFROMCef>
+    <JsMethodToResponse>responseFromCef</JsMethodToResponse>
+  </MessagesFROMCef>
+  <OtherOptions>
+    <Location>default</Location>
+  </OtherOptions>
+</Settings>
