@@ -59,14 +59,14 @@ namespace Infomat.InfomatCardReader
         private Message Message { get; set; }
         private void AssembleControllerError(string error)
         {
-            Message.Options = new Dictionary<string, dynamic>();
+            Message.Options = new Dictionary<string, string>();
             Message.Options.Add("Status", "fail");
             Message.Options.Add("Message", error);
             FromCef(Message);
         }
         private void AssembleControllerResponse(string response)
         {
-            Message.Options = new Dictionary<string, dynamic>();
+            Message.Options = new Dictionary<string, string>();
             Message.Options.Add("Status", "Ok");
             if (Message.Controller == CardRequestMethod)
                 Message.Options.Add("AsnUid", response);

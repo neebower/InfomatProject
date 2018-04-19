@@ -40,8 +40,6 @@ namespace Infomat
 
         }
 
-
-
         //-----------Implementation IMessagesToCef----------------
         public void request(string req)
         {
@@ -58,12 +56,15 @@ namespace Infomat
 
             Controller contr = factoryOfControllers.CreateController(message.Controller, _fromCef, Config);
 
-            contr.ToCef(message);
+            var response = contr.ToCef(message);
+
             }
             catch (Exception e)
             {
                 MessageError(e.Message, message);
             }
+
+
         }
         public void response(string s)
         {
@@ -76,7 +77,7 @@ namespace Infomat
         private void MessageError(string error, Message message)
         {
             if (message == null) message = new Message();
-            message.Options = new Dictionary<string, dynamic>();
+            message.Options = new Dictionary<string, string>();
             message.Options.Add("Status", "fail");
             message.Options.Add("Message", error);
             _fromCef.Response(message);

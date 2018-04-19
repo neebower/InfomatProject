@@ -21,13 +21,13 @@ namespace Infomat.InfomatTools
         public string Controller { get; set; }
         public string MessageType { get; set; }
         public string Method { get; set; }
-        public IDictionary<string, dynamic> Options { get; set; }
+        public IDictionary<string, string> Options { get; set; }
 
         public Message()
         {
 
         }
-        public Message(string id, string messageType, string controller, IDictionary<string, dynamic> options)
+        public Message(string id, string messageType, string controller, IDictionary<string, string> options)
         {
             Id = id;
             MessageType = messageType;
@@ -48,21 +48,7 @@ namespace Infomat.InfomatTools
             else return true;
         }
 
-        //public IEnumerable<string> Validate1()
-        //{
-        //    IEnumerable<string> errors = new string[4];
-
-        //    int id = 0;
-        //    if (string.IsNullOrEmpty(Id) || int.TryParse(Id, out id)) i += 8;
-
-        //    if (string.IsNullOrEmpty(Controller)) i += 4;
-
-        //    if (MessageType != "request" || MessageType != "response") i += 2;
-
-        //    if (string.IsNullOrEmpty(Method)) i += 1;
-
-        //    return i;
-        //}
+       
     }
         
 
@@ -75,9 +61,12 @@ namespace Infomat.InfomatTools
 
     public interface IMessagesFromCef
     {
+
         void Request(Message message);
         void Response(Message message);
     }
+
+    
    
 
     public interface IExecuteScript
@@ -93,7 +82,7 @@ namespace Infomat.InfomatTools
 
         IConfig Config { get; }
 
-        //void Configure();//now is inherited with generic implementation using extension method
+       
 
     }
 
@@ -130,17 +119,7 @@ namespace Infomat.InfomatTools
         void SetValue(string section, string key, string value);
     }
 
-    //public static class Permissions
-    //{
-    //    public static bool GrantAccess(string fullPath)
-    //    {
-    //        DirectoryInfo dInfo = new DirectoryInfo(fullPath);
-    //        DirectorySecurity dSecurity = dInfo.GetAccessControl();
-    //        dSecurity.AddAccessRule(new FileSystemAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null), FileSystemRights.FullControl, InheritanceFlags.ObjectInherit | InheritanceFlags.ContainerInherit, PropagationFlags.NoPropagateInherit, AccessControlType.Allow));
-    //        dInfo.SetAccessControl(dSecurity);
-    //        return true;
-    //    }
-    //}
+   
 
     public class IdleChecker
     {
@@ -155,7 +134,7 @@ namespace Infomat.InfomatTools
             _timer.Start();
         }
 
-        // ReSharper disable once PrivateFieldCanBeConvertedToLocalVariable
+        
         private readonly DispatcherTimer _timer;
         public int Interval { get; }
         public int IdleTimer { get; }

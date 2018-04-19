@@ -13,7 +13,7 @@ namespace Infomat
     /// </summary>
     public partial class App : IConfigurable
     {
-        //private readonly InfomatBrowser.Browser _browser;
+        private readonly InfomatBrowser.Browser _browser;
 
         // ReSharper disable once NotAccessedField.Local
         //private readonly InfomatCardReader.CardReader _cardReader;
@@ -44,11 +44,12 @@ namespace Infomat
             //Permissions.GrantAccess(AppDomain.CurrentDomain.BaseDirectory);
 
             _config = new Config("settings.xml");
-            //_browser = new InfomatBrowser.Browser(_config);
+             this.Configure();
+            _browser = new InfomatBrowser.Browser(_config);
             //_cardReader = new InfomatCardReader.CardReader(_browser,_config);
             //_browser.RegisterAsyncJsObject("callbackObj", callbackObj);
 
-            this.Configure();
+            
             _callbackObj = new MessagesToCef(_config);
 
             if (!_cursor) Mouse.OverrideCursor = Cursors.None;

@@ -196,10 +196,14 @@ namespace Infomat.InfomatBrowser
         private readonly string _defaultAddress;
 
         private IdleChecker _idleChecker;
+
+
         public void RegisterAsyncJsObject(string name, object jsObject)
         {
             _browser.RegisterAsyncJsObject(name, jsObject);
         }
+
+
 
         private static void InitCef()
         {

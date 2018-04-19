@@ -43,16 +43,6 @@ namespace Infomat.InfomatPrinter
 
 
 
-        //----------------------Supports of Communication---------------
-        //private void SendError(Message message, string error)
-        //{
-             
-        //    message.Options = new Dictionary<string, string>();
-        //    message.Options.Add("status", "fail");
-        //    message.Options.Add("message", error);
-        //    _fromCef.Response(message);
-        //}
-
 
 
         //------------Controller override-------------------
